@@ -1,5 +1,7 @@
 # Git Watcher
 
+[![Build Status](https://travis-ci.org/felipesabino/git-watcher.svg?branch=master)](https://travis-ci.org/felipesabino/git-watcher)
+
 Watches you git commit files and warns you if somebody modified, removed or added a file that was blacklisted.
 
 It was done to be initially used together with [travis-ci](https://travis-ci.org), but can be used with other CI tools as well, as long it complies to the following requirements:
