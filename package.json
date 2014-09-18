@@ -1,9 +1,9 @@
 {
-  "name": "git-watcher",
+  "name": "gitwatcher",
   "description": "Watches you git commit files and warns you if somebody modified, removed or added a file that was blacklisted.",
   "version": "1.0.0",
-  "homepage": "https://github.com/felipesabino/git-watcher",
-  "bugs": "https://github.com/felipesabino/git-watcher/issues",
+  "homepage": "https://github.com/felipesabino/gitwatcher",
+  "bugs": "https://github.com/felipesabino/gitwatcher/issues",
   "license": "MIT",
   "preferGlobal": "true",
   "bin": {
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/felipesabino/git-watcher"
+    "url": "https://github.com/felipesabino/gitwatcher"
   },
   "dependencies": {
     "yargs": "1.3.1",
