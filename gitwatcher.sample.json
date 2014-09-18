@@ -1,0 +1,9 @@
+{
+  "files": {
+    "list": [
+      "/path/to/non/modifiable/file",
+      "/path/to/another/file/to/raise/a.redflag"
+    ],
+    "should-ignore-added": false
+  }
+}

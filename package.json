@@ -1,0 +1,35 @@
+{
+  "name": "git-watcher",
+  "description": "Git Watcher",
+  "version": "1.0.0",
+  "homepage": "https://github.com/felipesabino/git-watcher",
+  "bugs": "https://github.com/felipesabino/git-watcher/issues",
+  "license": "MIT",
+  "preferGlobal": "true",
+  "bin": {
+    "git-watcher-files": "./cli/git-watcher-files.js"
+  },
+  "author": {
+    "name": "Felipe Sabino",
+    "email": "felipe@sabino.me",
+    "url": "http://felipe.sabino.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/felipesabino/git-watcher"
+  },
+  "dependencies": {
+    "yargs": "1.3.1",
+    "lodash": "2.4.1",
+    "colors": "0.6.2",
+    "jslint": "0.6.4"
+  },
+  "devDependencies": {
+    "mocha": "1.21.4",
+    "chai": "1.9.1"
+  },
+  "scripts": {
+    "test": "mocha -R nyan ./tests",
+    "lint": "jslint --white --vars --regexp --nomen --unparam --plusplus --predef describe --predef it --predef before --predef beforeEach --predef after --predef afterEach lib/**/*.js cli/**/*.js tests/**/*.js"
+  }
+}
