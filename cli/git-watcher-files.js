@@ -28,7 +28,7 @@ var argv = yargs
       .options('o', {
         alias: 'options',
         describe: 'options json file path. File is required',
-        default: './.gitwatcher.json'
+        default: '.gitwatcher.json'
       })
       .options('i', {
         alias: 'ignore-added',
@@ -49,7 +49,6 @@ catch (e) {
   process.exit(1);
 }
 var command = util.format('git log --name-status --oneline %s | egrep "^[MAD]\t."', argv.commit);
-
 var diff = exec(command,
   function (error, stdout, stderr) {
 

@@ -1,7 +1,7 @@
 {
   "name": "gitwatcher",
   "description": "Watches you git commit files and warns you if somebody modified, removed or added a file that was blacklisted.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/felipesabino/gitwatcher",
   "bugs": "https://github.com/felipesabino/gitwatcher/issues",
   "license": "MIT",
@@ -21,12 +21,12 @@
   "dependencies": {
     "yargs": "1.3.1",
     "lodash": "2.4.1",
-    "colors": "0.6.2",
-    "jslint": "0.6.4"
+    "colors": "0.6.2"
   },
   "devDependencies": {
     "mocha": "1.21.4",
-    "chai": "1.9.1"
+    "chai": "1.9.1",
+    "jslint": "0.6.4"
   },
   "scripts": {
     "test": "mocha -R nyan ./tests",

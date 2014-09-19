@@ -14,13 +14,19 @@ It was done to be initially used together with [travis-ci](https://travis-ci.org
 
 ### Instalation
 
-TODO: * add npm instalation - will be added after npm publishing and setup
+- npm:
+```
+npm install -g gitwatcher
+```
+
+- from source:
+```
 
 TODO: * add source instalation - will be added after git repo setup
 
 ### Configuration
 
-Add a config file to your project (the default path is `./.gitwatcher.json` but can be changed in runtime) and add your list of files to be watched there.
+Add a config file to your project (the default path is `.gitwatcher.json` but can be changed in runtime) and add your list of files to be watched there.
 
 There is a [sample file](gitwatcher.sample.json) in the repo that can be used as a template for that.
 
@@ -45,7 +51,7 @@ Add the following line to the `before_install` section in your `.travis.yml` fil
 git-watcher-files --commit $TRAVIS_COMMIT_RANGE
 ```
 
-If you have a configuration file in a location other than `./.gitwatcher.json`, use like the following:
+If you have a configuration file in a location other than `.gitwatcher.json`, use like the following:
 
 ```
 git-watcher-files --commit $TRAVIS_COMMIT_RANGE --options path/to/configuration.file
