@@ -42,13 +42,12 @@ var argv = yargs
 
 var options = null;
 try {
-  if (argv.options == defaultOptionsFile) {
-    options = path.join(process.cwd(), defaultOptionsFile)
+  if (argv.options === defaultOptionsFile) {
+    options = require(path.join(process.cwd(), defaultOptionsFile));
   }
   else {
     options = require(argv.options);
   }
-  console.log(options);
   if(!_.isArray(options.files.list)) { throw "file list format is invalid"; }
 }
 catch (e) {
