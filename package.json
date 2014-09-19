@@ -1,7 +1,7 @@
 {
   "name": "gitwatcher",
   "description": "Watches you git commit files and warns you if somebody modified, removed or added a file that was blacklisted.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/felipesabino/gitwatcher",
   "bugs": "https://github.com/felipesabino/gitwatcher/issues",
   "license": "MIT",
