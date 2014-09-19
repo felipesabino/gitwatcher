@@ -1,6 +1,6 @@
 # Git Watcher
 
-[![Build Status](https://travis-ci.org/felipesabino/git-watcher.svg?branch=master)](https://travis-ci.org/felipesabino/git-watcher)
+[![Build Status](https://travis-ci.org/felipesabino/gitwatcher.svg?branch=master)](https://travis-ci.org/felipesabino/gitwatcher)
 
 Watches you git commit files and warns you if somebody modified, removed or added a file that was blacklisted.
 
@@ -12,23 +12,58 @@ It was done to be initially used together with [travis-ci](https://travis-ci.org
 
 ## Using
 
-### Instalation
-
-- npm:
-```
-npm install -g gitwatcher
-```
-
-- from source:
-```
-
-TODO: * add source instalation - will be added after git repo setup
 
 ### Configuration
 
-Add a config file to your project (the default path is `.gitwatcher.json` but can be changed in runtime) and add your list of files to be watched there.
+Add a config file to your project, the default path is `.gitwatcher.json` but can be changed in runtime using the `--option`, then add your list of files to be watched there.
 
 There is a [sample file](gitwatcher.sample.json) in the repo that can be used as a template for that.
+
+
+### Travis-CI Instalation and Usage
+
+There are several ways of installing and using in your project. There are some examples bellow and a [demo project here](https://github.com/felipesabino/gitwatcher-examples) to check the usage.
+
+#### using npm global instalation:
+
+Add the following code to the `before_install` section of yout `.travis.yml` file
+
+```
+- npm install -g gitwatcher
+- git-watcher-files --commit $TRAVIS_COMMIT_RANGE
+```
+
+#### using source directly and [npm link](https://www.npmjs.org/doc/cli/npm-link.html)
+
+Add the following lines to the `before_install` section of your `.travis.yml`
+
+```
+- git clone https://github.com/felipesabino/gitwatcher
+- cd gitwatcher
+- npm install
+- npm link
+- cd ..
+- git-watcher-files --commit $TRAVIS_COMMIT_RANGE
+```
+
+#### using as devDependency in your `package.json` (only for node.js apps)
+
+Add `gitwatcher` dependency to your package.json `devDependencies` section
+
+```
+...
+  "devDependencies": {
+    "gitwatcher": "*"
+  }
+...
+```
+And then the following code to the `before_script` section of yout `.travis.yml` file
+```
+- ./node_modules/.bin/git-watcher-files --commit $TRAVIS_COMMIT_RANGE
+```
+**Important**: Notice that the instalation using devDependency needs the script to be added to  **`before_script`** as it will depend on an `npm install` which travis does automatically at the `install` step. Check the [build lifecycle documentation](http://docs.travis-ci.com/user/build-lifecycle/) for more information.
+
+
 
 #### Testing locally
 
@@ -42,20 +77,6 @@ This *SHA1..SHA2* can be the same format used by [github's compare view url ](ht
 
 Hint: You can easily check the files modified by each commit using `$ git log --name-status`
 
-
-### Travis-CI configuration
-
-Add the following line to the `before_install` section in your `.travis.yml` file
-
-```
-git-watcher-files --commit $TRAVIS_COMMIT_RANGE
-```
-
-If you have a configuration file in a location other than `.gitwatcher.json`, use like the following:
-
-```
-git-watcher-files --commit $TRAVIS_COMMIT_RANGE --options path/to/configuration.file
-```
 
 ## Developers
 
