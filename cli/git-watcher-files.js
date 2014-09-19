@@ -6,10 +6,13 @@ var util    = require('util'),
     exec    = require('child_process').exec,
     colors  = require('colors'),
     _       = require('lodash'),
+    path    = require('path'),
     yargs   = require('yargs');
 
 var logparser   = require('../lib/git-log-parser'),
     filechecker = require('../lib/file-checker');
+
+var defaultOptionsFile = '.gitwatcher.json';
 
 var argv = yargs
       .options('v', {
@@ -28,7 +31,7 @@ var argv = yargs
       .options('o', {
         alias: 'options',
         describe: 'options json file path. File is required',
-        default: '.gitwatcher.json'
+        default: defaultOptionsFile
       })
       .options('i', {
         alias: 'ignore-added',
@@ -39,7 +42,13 @@ var argv = yargs
 
 var options = null;
 try {
-  options = require(argv.options);
+  if (argv.options == defaultOptionsFile) {
+    options = path.join(process.cwd(), defaultOptionsFile)
+  }
+  else {
+    options = require(argv.options);
+  }
+  console.log(options);
   if(!_.isArray(options.files.list)) { throw "file list format is invalid"; }
 }
 catch (e) {
