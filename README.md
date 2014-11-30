@@ -75,7 +75,7 @@ $ git-watcher-files --commit SHA1..SHA2
 
 This *SHA1..SHA2* can be the same format used by [github's compare view url ](https://github.com/blog/612-introducing-github-compare-view) or [travi's *TRAVIS_COMMIT_RANGE* environment variable](http://docs.travis-ci.com/user/ci-environment/#Environment-variables)
 
-Hint: You can easily check the files modified by each commit using `$ git log --name-status`
+Hint: You can easily check the files modified by each commit using `$git diff --name-status`
 
 
 ## Developers

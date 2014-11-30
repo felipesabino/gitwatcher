@@ -56,7 +56,7 @@ catch (e) {
   yargs.showHelp();
   process.exit(1);
 }
-var command = util.format('git log --name-status --oneline %s | egrep "^[MAD]\t."', argv.commit);
+var command = util.format('git diff --name-status %s', argv.commit);
 var diff = exec(command,
   function (error, stdout, stderr) {
 

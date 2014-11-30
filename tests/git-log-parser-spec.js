@@ -19,7 +19,7 @@ describe('git log parser', function() {
 
   });
 
-  it('should return parse "git log --name-status --oneline" output format', function() {
+  it('should return parse "git diff --name-status" output format', function() {
 
     var input = 'M\tpath/to/modified/file\nA\tpath/to/added/file';
     var parse = logparser(input);
@@ -37,7 +37,7 @@ describe('git log parser', function() {
   });
 
   it('should ignore log line entries with no tabulation', function() {
-    var input = 'M\tpath/to/modified/file\n342a02d fixed something'; // if there is no grep by status (e.g. " egrep "^[MAD]\t.", the commit messages would also be provided, we are ignoring this value now)
+    var input = 'M\tpath/to/modified/file\n342a02d fixed something'; 
     var parse = logparser(input);
 
     parse.should.have.property('files')
