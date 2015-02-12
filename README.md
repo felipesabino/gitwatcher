@@ -1,6 +1,9 @@
 # Git Watcher
 
-[![Build Status](https://img.shields.io/travis/felipesabino/gitwatcher.svg?style=flat-square)](https://travis-ci.org/felipesabino/gitwatcher) [![npm version](https://img.shields.io/npm/v/gitwatcher.svg?style=flat-square)](https://www.npmjs.org/package/gitwatcher)
+[![Build Status](https://img.shields.io/travis/felipesabino/gitwatcher.svg?style=flat-square)](https://travis-ci.org/felipesabino/gitwatcher) 
+
+[![NPM](https://nodei.co/npm/gitwatcher.png)](https://nodei.co/npm/gitwatcher/)
+[![NPM](https://nodei.co/npm-dl/gitwatcher.png?height=2)](https://nodei.co/npm/gitwatcher/)
 
 
 Watches you git commit files and warns you if somebody modified, removed or added a file that was blacklisted.
